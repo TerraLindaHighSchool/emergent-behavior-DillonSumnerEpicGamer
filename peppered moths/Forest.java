@@ -20,7 +20,7 @@ public class Forest extends World
     // The probability that a bird will be created in any given grid position (in percent).
     private static final int BIRD_CREATION_PROBABILITY = 2;
     // The probability that a moth will be created in any given grid position (in percent).
-    private static final int MOTH_CREATION_PROBABILITY = 4;
+    private static final int MOTH_CREATION_PROBABILITY = 10;
     // Number of trees in the forest
     private static final int NUM_OF_TREES = 7;
     // The current step of the simulation.
