@@ -41,15 +41,11 @@ public class Ant extends Creature
      */
     public void act()
     {
-        
-        
         status();
     }
     
     private void checkForFood()
     {
-    
-    
         food food = (food) getOneIntersectingObject(food.class);
         if (food != null) 
         {
@@ -71,6 +67,7 @@ public class Ant extends Creature
     {
         if (carryingFood)
         {
+            walkTowardsHome();
             if (atHome())
             {
                 setImage(image1);
