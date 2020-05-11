@@ -53,5 +53,6 @@ public class AntWorld extends World
         addObject(food10,378,293);
         food food11 = new food();
         addObject(food11,357,336);
+        
     }
 }
