@@ -29,6 +29,16 @@ public class Ant extends Creature
         carryingFood = false;
     }
     
+    
+
+    /**
+     * Do what an ant's gotta do.
+     */
+    public void act()
+    {
+        status();
+    }
+    
     private void handlePheromoneDrop()
     {
         if (phAvailable == MAX_PH_AVAILABLE)
@@ -45,7 +55,14 @@ public class Ant extends Creature
     
     private boolean smellsPheromone()
     {
-        return false;
+        if (isTouching(Pheromone.class))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     private void walkTowardsPheromoneCenter()
@@ -53,7 +70,7 @@ public class Ant extends Creature
         
     }
     
-        private boolean atHome()
+    private boolean atHome()
     {
         if (getHomeHill() != null) {
             return (Math.abs(getX() - getHomeHill().getX()) < 4) && 
@@ -63,15 +80,6 @@ public class Ant extends Creature
             return false;
         }
     }
-
-    /**
-     * Do what an ant's gotta do.
-     */
-    public void act()
-    {
-        status();
-    }
-    
     private void checkForFood()
     {
         food food = (food) getOneIntersectingObject(food.class);
