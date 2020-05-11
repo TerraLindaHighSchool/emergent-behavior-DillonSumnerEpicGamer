@@ -67,7 +67,15 @@ public class Ant extends Creature
     
     private void walkTowardsPheromoneCenter()
     {
-        
+        Actor ph = getOneIntersectingObject(Pheromone.class);
+        if (ph != null)
+        {
+            headTowards(ph);
+            if (getX() == ph.getX() && getY() == ph.getY())
+            {
+                followTrailTimeRemaining = TIME_FOLLOWING_TRAIL;
+            }
+        }
     }
     
     private boolean atHome()
