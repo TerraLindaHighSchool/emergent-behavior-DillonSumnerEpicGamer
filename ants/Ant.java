@@ -11,6 +11,10 @@ public class Ant extends Creature
     private boolean carryingFood;
     private GreenfootImage image1 = getImage();
     private GreenfootImage image2 = new GreenfootImage("ant-with-food.gif");
+    private final int MAX_PH_AVAILABLE = 16;
+    private final int TIME_FOLLOWING_TRAIL = 30;
+    private int phAvailable = MAX_PH_AVAILABLE;
+    private int followTrialTimeRemaining = 0;
     
     /**
      * Create an ant with a given home hill. The initial speed is zero (not moving).
@@ -25,7 +29,22 @@ public class Ant extends Creature
         carryingFood = false;
     }
     
-    private boolean atHome()
+    private void handlePheromoneDrop()
+    {
+        
+    }
+    
+    private boolean smellsPheromone()
+    {
+        return false;
+    }
+    
+    private void walkTowardsPheromoneCenter()
+    {
+        
+    }
+    
+        private boolean atHome()
     {
         if (getHomeHill() != null) {
             return (Math.abs(getX() - getHomeHill().getX()) < 4) && 
@@ -34,7 +53,7 @@ public class Ant extends Creature
         else {
             return false;
         }
-}
+    }
 
     /**
      * Do what an ant's gotta do.
