@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 public class AntWorld extends World
 {
     public static final int SIZE = 640;
+   
 
     /**
      * Create a new world. It will be initialised with a few ant hills
@@ -19,6 +20,15 @@ public class AntWorld extends World
         super(SIZE, SIZE, 1);
         setPaintOrder(Ant.class, AntHill.class);
         prepare();
+    }
+    
+    public void act()
+    {
+        if (getObjects(Pheromone.class).size() == 0 || getObjects(food.class).size() == 0)
+        {
+            Greenfoot.stop();
+        }
+    
     }
 
     /**
